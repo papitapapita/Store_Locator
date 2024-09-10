@@ -9,9 +9,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-
-app.get('/api/v1/stores', (req, res) => {
-    res.send('Hello');
-})
+app.use('/api/v1/stores', require('./routes/stores'));
 
 app.listen(PORT, () => console.log(`Server properly running on ${PORT}`));
